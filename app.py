@@ -9,7 +9,7 @@ load_dotenv()
 
 # Get the API key from the environment variable
 openai_api_key = os.getenv("OPENAI_API_KEY")
-print(f"OpenAI API Key: {openai_api_key}")
+
 
 # Set the OpenAI API key
 openai.api_key = openai_api_key
@@ -35,13 +35,13 @@ def get_colors(msg):
     A:
     """
     try:
-        response = openai.ChatCompletion.create(
-            messages=[{"role": "user", "content": prompt}],
-            model="gpt-3.5-turbo",
-            max_tokens=200,
+        response = openai.chat.completions.create(
+        messages=[{"role": "user", "content": prompt}],
+        model="gpt-3.5-turbo",
+        max_tokens=200,
         )
         colors = json.loads(response.choices[0].message['content'])
-        print(f"Generated colors: {colors}")
+        
         return colors
     except Exception as e:
         print(f"Error generating colors: {e}")
