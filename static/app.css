@@ -1,0 +1,119 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px 0;
+}
+
+.color {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    transition: 0.2s opacity;
+    margin: 10px;
+    flex: 1 1 calc(25% - 20px); /* Adjust size for responsiveness */
+    max-width: calc(25% - 20px);
+    min-width: 150px; /* Ensure minimum width */
+    height: 200px; /* Fixed height */
+    box-sizing: border-box;
+}
+
+.color:active {
+    opacity: 0.8;
+}
+
+.color span {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #ffffff;
+    text-shadow: 1px 1px #000000;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+#form input[type="text"] {
+    font-size: 1.5rem;
+    outline: 0;
+    border: 2px solid #FFFFFF;
+    background-color: #F2F2F2;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.btn {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background-color: #000000;
+    border: 2px solid #000000;
+    color: #FFFFFF;
+    transition: 0.2s opacity;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.7;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .color {
+        flex: 1 1 calc(50% - 20px); /* 2 columns on medium screens */
+        max-width: calc(50% - 20px);
+    }
+
+    #form input[type="text"] {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .color {
+        flex: 1 1 calc(100% - 20px); /* 1 column on small screens */
+        max-width: calc(100% - 20px);
+    }
+
+    #form input[type="text"] {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+}
